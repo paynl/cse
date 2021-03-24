@@ -1,0 +1,9 @@
+<?php
+require_once 'vendor/autoload.php';
+
+define('RETURN_URL', 'https://my-shop.com/complete.php');
+
+\Paynl\Config::setApiBase('https://rest-api.pay.nl');
+\Paynl\Config::setApiToken('token');
+\Paynl\Config::setTokenCode('AT-XXXX-XXXX');
+\Paynl\Config::setServiceId('SL-XXXX-XXXX');

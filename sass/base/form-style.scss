@@ -1,0 +1,87 @@
+[data-validation="invalid"] {
+  border:1px solid red !important;
+}
+
+[data-validation="valid"] {
+  border:1px solid green !important;
+}
+
+[data-validation="potentially-valid"] {
+  border:1px solid orange !important;
+}
+
+fieldset legend {
+  color:#052854;
+  font-size:1.5em;
+  font-weight:100;
+  padding:.5em 0 .5em 0;
+  margin:0;
+}
+
+input {
+
+}
+
+button[type="submit"] {
+  padding:10px 1em;
+  margin:1em 1em 1em 0;
+  background-color:#052854;
+  color:#A2CC83;
+  border:0;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-weight:700;
+  width:100%;
+  transition: all 0.5s ease;
+}
+
+button[data-loading-state="0"]:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  pointer-events: all !important;
+  transition: all 0.2s ease;
+}
+
+.form-element-container {
+  margin-bottom:1em;
+}
+
+.form-element-container:last-of-type {
+  margin-bottom:0;
+}
+
+dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+dt {
+  width: 33%;
+}
+dd {
+  margin-left: auto;
+  width: 66%;
+}
+
+input, select {
+  width:100%;
+  padding:10px;
+  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  box-shadow: inset 1px 2px 8px rgba(0,0,0,0.07);
+  background-color: rgb(232, 240, 254);
+}
+
+input:disabled, select:disabled {
+  background:#ddd;
+}
+
+dl {
+  font-size:.9em;
+}
+
+label {
+  display:block;
+  padding-bottom:.25em;
+}
