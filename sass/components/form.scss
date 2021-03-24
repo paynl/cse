@@ -1,0 +1,111 @@
+form[data-pay-encrypt-form=""] {
+    fieldset, legend {
+        border:0;
+    }
+
+    [data-credit-card-type] {
+        display:block;
+        height:inherit;
+        background-size: cover;
+    }
+
+    .form-element-container
+    {
+        display:block;
+    }
+
+    .has-icon-container {
+        flex-direction: row;
+        box-sizing: border-box;
+        flex: 0 1 auto;
+    }
+
+    .has-icon-wrap {
+        position:relative;
+    }
+
+    .has-icon-container .icon-container {
+        pointer-events: none;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        height: 31px;
+    }
+
+    .has-icon-container .input-container {
+        position:relative;
+        margin:0;
+        padding:0;
+    }
+
+    .has-icon-container .input-container input {
+        position:relative;
+    }
+
+    button[type="submit"] {
+        height:50px;
+
+        span {
+            display:none;
+        }
+
+        span.not-loading {
+            margin:1em;
+        }
+
+        span.loading {
+            margin:1em;
+        }
+    }
+
+    button[data-loading-state="0"] {
+        .state-loading {
+            display:none;
+        }
+
+        .state-not-loading {
+            display:inline-block;
+        }
+    }
+
+    button[data-loading-state="1"] {
+        padding:0;
+
+        .state-loading {
+            margin-top:5px;
+            display:inline-block;
+        }
+
+        .state-not-loading {
+            display:none;
+        }
+    }
+    .row-pan-cvc-group, .row-expiry-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+
+    .row-pan-cvc-group {
+        .column-pan {
+            flex-basis: 75%;
+        }
+
+        .column-cvc {
+            flex-basis: 20%;
+        }
+    }
+
+    .row-expiry-group {
+        .column-month {
+            flex-basis:75%;
+        }
+
+        .column-year {
+            flex-basis:20%;
+        }
+    }
+}
