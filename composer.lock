@@ -8,22 +8,22 @@
     "packages": [
         {
             "name": "paynl/sdk",
-            "version": "v1.5.16",
+            "version": "v1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paynl/sdk.git",
-                "reference": "da650911f57e406ce71da6cf530bdb1402b3808a"
+                "reference": "88e392debd5d8e161fe0a0fb72da360b6f8b8473"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paynl/sdk/zipball/da650911f57e406ce71da6cf530bdb1402b3808a",
-                "reference": "da650911f57e406ce71da6cf530bdb1402b3808a",
+                "url": "https://api.github.com/repos/paynl/sdk/zipball/88e392debd5d8e161fe0a0fb72da360b6f8b8473",
+                "reference": "88e392debd5d8e161fe0a0fb72da360b6f8b8473",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
-                "php-curl-class/php-curl-class": "^8.3"
+                "php-curl-class/php-curl-class": "^8.3||^9.0"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^1.0",
@@ -48,25 +48,25 @@
                     "email": "andy@pay.nl"
                 }
             ],
-            "time": "2020-07-13T17:53:29+00:00"
+            "time": "2021-10-12T19:58:07+00:00"
         },
         {
             "name": "php-curl-class/php-curl-class",
-            "version": "8.8.0",
+            "version": "9.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-curl-class/php-curl-class.git",
-                "reference": "180273b577148090a62bb7333201d17e0b6efb75"
+                "reference": "e6de01c8c3755d2b015195d671d22a3c71020d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/180273b577148090a62bb7333201d17e0b6efb75",
-                "reference": "180273b577148090a62bb7333201d17e0b6efb75",
+                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/e6de01c8c3755d2b015195d671d22a3c71020d15",
+                "reference": "e6de01c8c3755d2b015195d671d22a3c71020d15",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.3"
+                "php": ">=7.0"
             },
             "require-dev": {
                 "ext-gd": "*",
@@ -115,7 +115,7 @@
                 "web-service",
                 "xml"
             ],
-            "time": "2020-04-20T03:39:57+00:00"
+            "time": "2021-09-04T18:28:24+00:00"
         }
     ],
     "packages-dev": [],

@@ -1,9 +1,12 @@
 <?php
+
+use Paynl\Payment;
+
 require_once '../config.php';
 try {
-    $result = \Paynl\Creditcard::publicKeys();
-} catch (\Exception $e) {
-    $result  = array(
+    $result = Payment::paymentEncryptionKeys();
+} catch (Exception $e) {
+    $result = array(
         'type' => 'error',
         'message' => $e->getMessage()
     );
