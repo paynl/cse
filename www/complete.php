@@ -8,8 +8,8 @@ try {
     $result = Transaction::details(filter_var($_GET['orderId'], FILTER_SANITIZE_STRING))->getData();
 } catch (\Exception $e) {
     $result = array(
-        'type' => 'error',
-        'message' => $e->getMessage()
+        'result' => 0,
+        'errorMessage' => $e->getMessage()
     );
 }
 
