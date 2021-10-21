@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f59e9d95d48a7152bac7085448e23ba",
+    "content-hash": "f23c65f7209b7ad8080160e74302ab3b",
     "packages": [
         {
             "name": "paynl/sdk",
-            "version": "dev-feature/SC-356",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paynl/sdk.git",
-                "reference": "58dcceb15f8e775838e46f7c67adb69cb087ba36"
+                "reference": "ea6618d2cf63674ef1b55aa36c956c63e7c0e3e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paynl/sdk/zipball/58dcceb15f8e775838e46f7c67adb69cb087ba36",
-                "reference": "58dcceb15f8e775838e46f7c67adb69cb087ba36",
+                "url": "https://api.github.com/repos/paynl/sdk/zipball/ea6618d2cf63674ef1b55aa36c956c63e7c0e3e6",
+                "reference": "ea6618d2cf63674ef1b55aa36c956c63e7c0e3e6",
                 "shasum": ""
             },
             "require": {
@@ -50,9 +50,9 @@
             ],
             "support": {
                 "issues": "https://github.com/paynl/sdk/issues",
-                "source": "https://github.com/paynl/sdk/tree/feature/SC-356"
+                "source": "https://github.com/paynl/sdk/tree/1.6.4"
             },
-            "time": "2021-10-15T10:37:34+00:00"
+            "time": "2021-10-21T11:56:01+00:00"
         },
         {
             "name": "php-curl-class/php-curl-class",
@@ -129,12 +129,15 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "paynl/sdk": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-json": "*"
+    },
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.2"
+    },
     "plugin-api-version": "2.1.0"
 }

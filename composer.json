@@ -5,7 +5,7 @@
         }
     },
     "require": {
-        "paynl/sdk": "dev-feature/SC-356",
+        "paynl/sdk": "v1.6.4",
         "ext-json": "*"
     }
 }
