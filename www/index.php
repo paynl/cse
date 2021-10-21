@@ -32,7 +32,7 @@ try {
 <body>
 <main class="rounded-box">
     <header>
-        <img src="img/pay_logo.png" alt="Company Logo" width="100" height="100" />
+
     </header>
     <aside>
         <h2>Bestelgegevens</h2>
