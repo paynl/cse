@@ -1,63 +1,48 @@
 <?php
-use Paynl\Config;
+
 use Paynl\Payment;
+use Paynl\Api\Payment\Model;
 
 require_once '../config.php';
+
 try {
-    $result = null;
-
-    if (isset($_POST) && isset($_POST['pay_encrypted_data'])) {
-        $payload = json_decode($_POST['pay_encrypted_data'], true);
-
-        Config::setPaymentApiBase('https://api.card.maurice.dev.pay.nl');
-        $arrResult = Payment::paymentAuthorize(
-                $_POST['transaction_id'],
-                $_POST['entrance_code'],
-                $_POST['threeds_transaction_id'],
-                $_POST['acquirer_id'],
-                $payload
-        );
-
-        $result = array(
-            'result' => 0,
-        );
-
-        if (!empty($arrResult['request']['result']) && $arrResult['request']['result'] == 1) {
-            if (!empty($arrResult['payment']['bankCode']) && $arrResult['payment']['bankCode'] == "00") {
-                if (!empty($arrResult['transaction']['state']) && in_array(
-                    $arrResult['transaction']['state'],
-                    array(85, 95, 100)
-                )) {
-                    $result['result'] = 1;
-                }
-            }
-        }
-
-        if ($result['result'] > 0) {
-            $result['nextAction'] = !empty($arrResult['transaction']['stateName']) ? strtolower(
-                    $arrResult['transaction']['stateName']
-            ) : '';
-            $result['orderId'] = !empty($arrResult['transaction']['orderId']) ? $arrResult['transaction']['orderId'] : "";
-            $result['entranceCode'] = !empty($arrResult['transaction']['entranceCode']) ? $arrResult['transaction']['entranceCode'] : "";
-        } else {
-            if (isset($arrResult['request'])) {
-                $result['errorId'] = ! empty($arrResult['request']['errorId'])
-                        ? $arrResult['request']['errorId']
-                        : '';
-                $result['errorMessage'] = ! empty($arrResult['request']['errorMessage'])
-                        ? $arrResult['request']['errorMessage']
-                        : '';
-            } else {
-                $result['errorMessage'] = isset($arrResult['message']) && ! empty($arrResult['message'])
-                        ? $arrResult['message']
-                        : '';
-            }
-        }
+    if (!isset($_POST['pay_encrypted_data'])) {
+        throw new Exception('Missing payload');
     }
+
+    $payload = json_decode($_POST['pay_encrypted_data'], true);
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception('Invalid json');
+    }
+
+    $transaction = new Model\Authorize\Transaction();
+    $transaction
+        ->setOrderId($_POST['transaction_id'])
+        ->setEntranceCode($_POST['entrance_code']);
+
+    $cse = new Model\CSE();
+    $cse
+        ->setIdentifier($payload['identifier'])
+        ->setData($payload['data']);
+
+    $auth = new Model\Auth();
+    $auth
+        ->setPayTdsAcquirerId($_POST['acquirer_id'])
+        ->setPayTdsTransactionId($_POST['threeds_transaction_id']);
+
+    $payment = new Model\Payment();
+    $payment
+        ->setMethod(Model\Payment::METHOD_CSE)
+        ->setCse($cse)
+        ->setAuth($auth);
+
+    $result = Payment::authorize($transaction, $payment)->getData();
+
 } catch (Exception $e) {
     $result = array(
-            'type' => 'error',
-            'message' => $e->getMessage()
+        'type' => 'error',
+        'message' => $e->getMessage()
     );
 }
 

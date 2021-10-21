@@ -3,14 +3,8 @@
 use Paynl\Payment;
 
 require_once '../config.php';
-try {
-    $result = Payment::paymentEncryptionKeys();
-} catch (Exception $e) {
-    $result = array(
-        'type' => 'error',
-        'message' => $e->getMessage()
-    );
-}
+
+$result = Payment::paymentEncryptionKeys()->getKeys();
 
 header('content-type: application/json');
 echo json_encode($result);
