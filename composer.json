@@ -1,5 +1,11 @@
 {
+    "config": {
+        "platform": {
+            "php": "7.2"
+        }
+    },
     "require": {
-        "paynl/sdk": "^1.5"
+        "paynl/sdk": "dev-feature/SC-356",
+        "ext-json": "*"
     }
 }

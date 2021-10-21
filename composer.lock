@@ -1,23 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c669924e76f134debf2d8ad07e7d37ea",
+    "content-hash": "5f59e9d95d48a7152bac7085448e23ba",
     "packages": [
         {
             "name": "paynl/sdk",
-            "version": "v1.6.3",
+            "version": "dev-feature/SC-356",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paynl/sdk.git",
-                "reference": "88e392debd5d8e161fe0a0fb72da360b6f8b8473"
+                "reference": "58dcceb15f8e775838e46f7c67adb69cb087ba36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paynl/sdk/zipball/88e392debd5d8e161fe0a0fb72da360b6f8b8473",
-                "reference": "88e392debd5d8e161fe0a0fb72da360b6f8b8473",
+                "url": "https://api.github.com/repos/paynl/sdk/zipball/58dcceb15f8e775838e46f7c67adb69cb087ba36",
+                "reference": "58dcceb15f8e775838e46f7c67adb69cb087ba36",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,11 @@
                     "email": "andy@pay.nl"
                 }
             ],
-            "time": "2021-10-12T19:58:07+00:00"
+            "support": {
+                "issues": "https://github.com/paynl/sdk/issues",
+                "source": "https://github.com/paynl/sdk/tree/feature/SC-356"
+            },
+            "time": "2021-10-15T10:37:34+00:00"
         },
         {
             "name": "php-curl-class/php-curl-class",
@@ -115,15 +119,22 @@
                 "web-service",
                 "xml"
             ],
+            "support": {
+                "issues": "https://github.com/php-curl-class/php-curl-class/issues",
+                "source": "https://github.com/php-curl-class/php-curl-class/tree/9.4.0"
+            },
             "time": "2021-09-04T18:28:24+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "paynl/sdk": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }

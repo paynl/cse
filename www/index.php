@@ -1,7 +1,19 @@
 <?php
+
+use Paynl\Error\Api;
+use Paynl\Payment;
+
 require_once '../config.php';
-\Paynl\Config::setPaymentApiBase('https://api.card.maurice.dev.pay.nl');
-$publicEncryptionKeys = \Paynl\Payment::paymentEncryptionKeys();
+
+try {
+
+    $publicEncryptionKeys = Payment::paymentEncryptionKeys()->getKeys();
+} catch (Api $exception) {
+    die ('<h1>Unexpected response from server</h1><p>' . $exception->getMessage() . '</p>');
+} catch (Exception $exception) {
+    die ('<h1>Unexpected error</h1><p>' . $exception->getMessage() . '</p>');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +26,7 @@ $publicEncryptionKeys = \Paynl\Payment::paymentEncryptionKeys();
     <link rel="stylesheet" type="text/css" href="cryptography-demo.css">
     <script>
         var keyUrl = 'public-keys.php';
-        var keyPairs = '<?php echo json_encode($publicEncryptionKeys['keys']); ?>';
+        var keyPairs = '<?php echo json_encode($publicEncryptionKeys); ?>';
     </script>
 </head>
 <body>
