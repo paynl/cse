@@ -309,7 +309,7 @@ define(['exports'], function (exports) { 'use strict';
                 entranceCode: null,
                 transactionId: null,
                 threeDSTransactionId: null,
-                acquireId: null,
+                acquirerId: null,
                 challengeRetry: false,
                 challengeTime: null,
                 challengeTimeout: 120,
@@ -9428,7 +9428,9 @@ define(['exports'], function (exports) { 'use strict';
 
             formData.set('pay_encrypted_data', state.getCurrentState().payload);
             formData.set('transaction_id', state.getCurrentState().transactionId);
+            formData.set('entrance_code', state.getCurrentState().entranceCode);
             formData.set('threeds_transaction_id', state.getCurrentState().threeDSTransactionId);
+            formData.set('acquirer_id', state.getCurrentState().acquirerId);
 
             EventDispatcher.getInstance().dispatch(new ModalCloseEvent(null), Events.onModalCloseEvent);
             EventDispatcher.getInstance().dispatch(new StateChangeEvent(null, {
