@@ -58,8 +58,8 @@ try {
 
 } catch (Exception $e) {
     $result = array(
-        'type' => 'error',
-        'message' => $e->getMessage()
+        'result' => 0,
+        'errorMessage' => $e->getMessage()
     );
 }
 

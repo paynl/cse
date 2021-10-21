@@ -14,7 +14,7 @@ try {
     )->getData();
 
 } catch (Exception $e) {
-    $result = array('type' => 'error', 'message' => $e->getMessage());
+    $result = array('result' => '0', 'errorMessage' => $e->getMessage());
 }
 
 header('content-type: application/json');

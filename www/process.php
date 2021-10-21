@@ -71,10 +71,14 @@ try {
 
 } catch (Exception $e) {
     $result = array(
-        'type' => 'error',
-        'message' => $e->getMessage()
+        'result' => 0,
+        'errorMessage' => $e->getMessage()
     );
 }
+
+/*
+ * {"result":"0","errorTag":"acquirer_ExpiredCard","errorCode":"2802","errorMessage":"Het is helaas niet mogelijk om de betaling te voltooien. De door u gebruikte kaart is verlopen. Probeer het nogmaals met een andere kaart.","nextAction":"retryChallenge","transactionID":"f4d706dc-7d89-4d48-a757-3f07d0ab5876","orderId":"1602461478Xffc0b","entranceCode":"6af7668093064f35908537a4ebdfd7599318e1a2"}
+ */
 
 header('content-type: application/json');
 echo json_encode($result);
