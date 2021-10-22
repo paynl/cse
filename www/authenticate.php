@@ -54,6 +54,16 @@ try {
         $payment->setAuth($auth);
     }
 
+    $browser = new Model\Browser();
+    $browser
+        ->setJavaEnabled('false')
+        ->setJavascriptEnabled('false')
+        ->setLanguage('nl-NL')
+        ->setColorDepth('24')
+        ->setScreenWidth('1920')
+        ->setScreenHeight('1080')
+        ->setTz('-120');
+
     $result = Payment::authenticateMethod($transaction, $payment)->getData();
 
 } catch (Exception $e) {
