@@ -1,0 +1,28 @@
+{
+  "name": "cryptography-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/paynl/cryptography-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/paynl/cryptography-demo#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.3",
+    "postcss-preset-env": "^6.7.0",
+    "rollup": "^2.27.0",
+    "rollup-plugin-scss": "^2.6.0",
+    "rollup-plugin-stylelint": "^1.0.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-postcss": "^3.1.8"
+  }
+}
