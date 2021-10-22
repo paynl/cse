@@ -64,6 +64,8 @@ try {
         ->setScreenHeight('1080')
         ->setTz('-120');
 
+    $payment->setBrowser($browser);
+
     $result = Payment::authenticateMethod($transaction, $payment)->getData();
 
 } catch (Exception $e) {
