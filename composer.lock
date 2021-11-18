@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f23c65f7209b7ad8080160e74302ab3b",
+    "content-hash": "52b63c4d1a88d078703c99cab73e7740",
     "packages": [
         {
             "name": "paynl/sdk",
-            "version": "1.6.4",
+            "version": "v1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paynl/sdk.git",
-                "reference": "ea6618d2cf63674ef1b55aa36c956c63e7c0e3e6"
+                "reference": "7b35dc4e579280d34f12ba519fa6aaaca7d8b543"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paynl/sdk/zipball/ea6618d2cf63674ef1b55aa36c956c63e7c0e3e6",
-                "reference": "ea6618d2cf63674ef1b55aa36c956c63e7c0e3e6",
+                "url": "https://api.github.com/repos/paynl/sdk/zipball/7b35dc4e579280d34f12ba519fa6aaaca7d8b543",
+                "reference": "7b35dc4e579280d34f12ba519fa6aaaca7d8b543",
                 "shasum": ""
             },
             "require": {
@@ -50,9 +50,9 @@
             ],
             "support": {
                 "issues": "https://github.com/paynl/sdk/issues",
-                "source": "https://github.com/paynl/sdk/tree/1.6.4"
+                "source": "https://github.com/paynl/sdk/tree/v1.6.5"
             },
-            "time": "2021-10-21T11:56:01+00:00"
+            "time": "2021-10-22T14:40:13+00:00"
         },
         {
             "name": "php-curl-class/php-curl-class",
