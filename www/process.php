@@ -25,11 +25,11 @@ try {
 
     $address = new Model\Address();
     $address
-        ->setStreetName('Minister Treubstraat')
+        ->setStreetName('Street')
         ->setStreetNumber('10')
         ->setStreetNumberExtension('')
-        ->setZipCode('7522BA')
-        ->setCity('Enschede')
+        ->setZipCode('1234AA')
+        ->setCity('Amsterdam')
         ->setRegionCode('OV')
         ->setCountryCode('NL');
 
