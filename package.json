@@ -20,7 +20,8 @@
     "postcss-preset-env": "^6.7.0",
     "rollup": "^2.27.0",
     "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-stylelint": "^1.0.0"
+    "rollup-plugin-stylelint": "^1.0.0",
+    "sass": "^1.43.5"
   },
   "devDependencies": {
     "rollup-plugin-postcss": "^4.0.2"
