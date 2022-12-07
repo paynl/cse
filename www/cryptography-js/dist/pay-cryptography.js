@@ -1067,6 +1067,8 @@ class ActionableResponseListener extends EventListener {
             );
             break;
         case 'paid':
+        case 'verify':
+        case 'authorize':
         case 'redirectToShop':
             EventDispatcher.getInstance().dispatch(
                 new PaymentCompleteEvent(response, {
@@ -9251,6 +9253,8 @@ class ResponseFactory {
             case 'promptForMpi':
                 return new ErrorResponse(data);
             case 'redirectToShop':
+            case 'verify':
+            case 'authorize':
             case 'paid':
                 return new RedirectionResponse(data);
             case 'challenged':

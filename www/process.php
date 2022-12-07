@@ -35,15 +35,16 @@ try {
 
     $invoice = new Model\Invoice();
     $invoice
-        ->setFirstName('Henk')
-        ->setLastName('de Vries')
+        ->setFirstName('Robert')
+        ->setLastName('Van der Werf')
         ->setGender('M')
         ->setAddress($address);
 
     $customer = new Model\Customer();
     $customer
-        ->setFirstName('Foo')
-        ->setLastName('Bar')
+        ->setFirstName('Robert')
+        ->setLastName('Van der Werf')
+        ->setEmailAddress('robert.van.der.werf@pay.nl')
         ->setAddress($address)
         ->setInvoice($invoice);
 

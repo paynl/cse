@@ -1069,6 +1069,8 @@ define(['exports'], function (exports) { 'use strict';
                 );
                 break;
             case 'paid':
+            case 'verify':
+            case 'authorize':
             case 'redirectToShop':
                 EventDispatcher.getInstance().dispatch(
                     new PaymentCompleteEvent(response, {
@@ -9253,6 +9255,8 @@ define(['exports'], function (exports) { 'use strict';
                 case 'promptForMpi':
                     return new ErrorResponse(data);
                 case 'redirectToShop':
+                case 'verify':
+                case 'authorize':
                 case 'paid':
                     return new RedirectionResponse(data);
                 case 'challenged':

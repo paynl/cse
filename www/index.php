@@ -106,7 +106,6 @@ try {
                         <label for="year">Jaar</label>
                         <select name="valid_thru_year" id="year"  data-pay-encrypt-field>
                             <option value="" disabled selected>Kies</option>
-                            <option value="2021">2021</option>
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
                             <option value="2024">2024</option>
