@@ -1279,7 +1279,7 @@ NumeralFormatter.groupStyle = {
     thousand: 'thousand',
     lakh:     'lakh',
     wan:      'wan',
-    none:     'none'
+    none:     'none'    
 };
 
 NumeralFormatter.prototype = {
@@ -1326,7 +1326,7 @@ NumeralFormatter.prototype = {
         } else {
             partSignAndPrefix = partSign;
         }
-
+        
         partInteger = value;
 
         if (value.indexOf(owner.numeralDecimalMark) >= 0) {
@@ -1391,7 +1391,7 @@ var DateFormatter = function (datePattern, dateMin, dateMax) {
         return parseInt(x, 10);
       });
     if (owner.dateMax.length === 2) owner.dateMax.unshift(0);
-
+    
     owner.initBlocks();
 };
 
@@ -2262,7 +2262,7 @@ var DefaultProperties = {
 
         // others
         target.swapHiddenInput = !!opts.swapHiddenInput;
-
+        
         target.numericOnly = target.creditCard || target.date || !!opts.numericOnly;
 
         target.uppercase = !!opts.uppercase;
@@ -9253,9 +9253,9 @@ class ResponseFactory {
             case 'promptForMpi':
                 return new ErrorResponse(data);
             case 'redirectToShop':
-            case 'paid':
             case 'verify':
             case 'authorize':
+            case 'paid':
                 return new RedirectionResponse(data);
             case 'challenged':
                 return new ChallengedResponse(data);
@@ -10534,7 +10534,7 @@ function getNumberOfMonthDigitsInDateString(dateString) {
     /*
       if the first character in the string starts with `0`,
       we know that the month will be 2 digits.
-
+  
       '0122' => {month: '01', year: '22'}
     */
     if (firstCharacter === 0) {
@@ -10543,7 +10543,7 @@ function getNumberOfMonthDigitsInDateString(dateString) {
     /*
       if the first character in the string starts with
       number greater than 1, it must be a 1 digit month
-
+  
       '322' => {month: '3', year: '22'}
     */
     if (firstCharacter > 1) {
@@ -10552,7 +10552,7 @@ function getNumberOfMonthDigitsInDateString(dateString) {
     /*
       if the first 2 characters make up a number between
       13-19, we know that the month portion must be 1
-
+  
       '139' => {month: '1', year: '39'}
     */
     if (firstCharacter === 1 && Number(dateString[1]) > 2) {
@@ -10564,7 +10564,7 @@ function getNumberOfMonthDigitsInDateString(dateString) {
       valid if we assumed that the month was 1. If it is
       not potentially valid, we assume the month must have
       2 digits.
-
+  
       '109' => {month: '10', year: '9'}
       '120' => {month: '1', year: '20'} // when checked in the year 2019
       '120' => {month: '12', year: '0'} // when checked in the year 2021
@@ -10577,7 +10577,7 @@ function getNumberOfMonthDigitsInDateString(dateString) {
       If the length of the value is exactly 5 characters,
       we assume a full year was passed in, meaning the remaining
       single leading digit must be the month value.
-
+  
       '12202' => {month: '1', year: '2202'}
     */
     if (dateString.length === 5) {
@@ -10587,7 +10587,7 @@ function getNumberOfMonthDigitsInDateString(dateString) {
       If the length of the value is more than five characters,
       we assume a full year was passed in addition to the month
       and therefore the month portion must be 2 digits.
-
+  
       '112020' => {month: '11', year: '2020'}
     */
     if (dateString.length > 5) {
